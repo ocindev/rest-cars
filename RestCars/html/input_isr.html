@@ -8,7 +8,8 @@
 </div>
     <script language="javascript" type="text/javascript" src="jquery-2.2.0.min.js"></script>
     <script language="javascript" type="text/javascript">
-    
+    const refreshInterval = 50;
+    function refreshInputs(){
         $.getJSON('http://localhost:8000/restcars/api', function(data){
         
         rotAngle = data.input.mUnfilteredSteering*360;
@@ -26,7 +27,10 @@
 
         var elem = document.getElementById("canv");
         elem.setAttribute('style','-webkit-transform:rotate('+rotAngle+'deg)');
-        })
+        });
+    }
+
+    setInterval(refreshInputs, refreshInterval);
 
         
     </script>
