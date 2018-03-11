@@ -14,7 +14,7 @@ void renderInput(std::stringstream& ss, const SharedMemory* sharedMemory)
 	ss << "\"mUnfilteredThrottle\":" << sharedMemory->mUnfilteredThrottle << ",";
 	ss << "\"mUnfilteredBrake\":" << sharedMemory->mUnfilteredBrake << ",";
 	ss << "\"mUnfilteredSteering\":" << sharedMemory->mUnfilteredSteering << ",";
-	ss << "\"mUnfilteredClutch\":" << sharedMemory->mUnfilteredClutch << ",";
+	ss << "\"mUnfilteredClutch\":" << sharedMemory->mUnfilteredClutch << "}";
 }
 
 

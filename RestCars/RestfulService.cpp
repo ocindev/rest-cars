@@ -1,10 +1,9 @@
 #include "RestfulService.h"
 #include "JSONRenderer.h"
 
-
 #define HTTP_503 "{\"status\": \"503 Restcars unavailable, make sure Project Cars 2 is running and Shared Memory enabled!\"}"
 #define HTTP_409 "{\"status\": \"409 Conflict, Shared Memory Definition seems to be outdated. Make sure you have the latest version of Restcars!\"}"
-#define SHARED_MEMORY_OBJECT "$pcars2"
+#define SHARED_MEMORY_OBJECT "$pcars2$"
 
 
 
@@ -73,6 +72,12 @@ std::string getRequestMethod(struct http_message *hm)
 void prepareResponse(struct mg_connection *mc, const SharedMemory* sharedData, struct http_message *hm)
 {
 	std::string json = jsonRenderer.renderJSON(sharedData, getQueryString(hm));
+	mg_printf(mc, "HTTP/1.1 200 Ok\r\n"
+		"Content-Type: application/json\r\n"
+		"Cache-Control: no-cache\r\n"
+		"Access-Control-Allow-Origin: *\r\n"
+		"Content-Length: %d\r\n\r\n", (int)json.size());
+	mg_send(mc, json.data(), json.size());
 
 }
 
@@ -83,7 +88,7 @@ void prepareData(struct mg_connection *mc, const SharedMemory* sharedData, struc
 		response409(mc);
 	}
 	else {
-
+		prepareResponse(mc, sharedData, hm);
 	}
 }
 
