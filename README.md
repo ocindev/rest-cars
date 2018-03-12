@@ -1,2 +1,2 @@
-# Project Cars 2 Stream Helper Tool
-Project Cars 2 shared-memory API for serving game informations via HTTP calls 
+# Rest Cars 
+Project Cars 2 shared-memory REST API for serving game informations via HTTP Protocol
