@@ -1,0 +1,33 @@
+td {
+    text-align:center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 9pt;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+
+td.name {
+    background-color: #232323;
+    color: #f9f9f9;
+  }
+  
+  td.time {
+    background-color: #050505;
+    color: #f9f9f9;
+  }
+  
+  td.cclass {
+    border-radius: 25px;
+  }
+  
+  td.pos {
+    background-color: lightblue;
+    text-align:center;
+  }
+  
+  td.cLap {
+    background-color: #232323;
+    color: #f9f9f9;
+  }

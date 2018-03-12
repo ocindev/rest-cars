@@ -8,6 +8,8 @@
 JSONRenderer::JSONRenderer() {};
 
 
+
+
 void renderInput(std::stringstream& ss, const SharedMemory* sharedMemory)
 {
 	ss << "\"input\":{";
@@ -17,9 +19,20 @@ void renderInput(std::stringstream& ss, const SharedMemory* sharedMemory)
 	ss << "\"mUnfilteredClutch\":" << sharedMemory->mUnfilteredClutch << "}";
 }
 
-void renderParticipiant(std::stringstream& ss, const ParticipantInfo pInfo)
+void renderParticipiant(std::stringstream& ss,int index, const SharedMemory* sharedMemory)
 {
-	//TODO Display additional data from v8
+	const ParticipantInfo pInfo = sharedMemory->mParticipantInfo[index];
+	ss << "{\"mIsActive\":" << (pInfo.mIsActive ? "true" : "false") << ",";
+	ss << "\"mName\":\"" << pInfo.mName << "\",";
+	ss << "\"mRacePosition\":" << pInfo.mRacePosition << ",";
+	ss << "\"mCurrentLap\":" << pInfo.mCurrentLap << ",";
+	ss << "\"mFastesLapTime\":" << sharedMemory->mFastestLapTimes[index] << ",";
+	ss << "\"mPitmode\":" << sharedMemory->mPitModes[index] << ",";
+	ss << "\"mRaceState\":" << sharedMemory->mRaceStates[index] << ",";
+	ss << "\"mNationality\":" << sharedMemory->mNationalities[index] << ",";
+	ss << "\"mCarClass\":\"" << sharedMemory->mCarClassNames[index] << "\",";
+	ss << "\"mCarName\":\"" << sharedMemory->mCarNames[index] << "\"}";
+
 }
 
 void renderParticipiants(std::stringstream& ss, const SharedMemory* sharedMemory)
@@ -34,7 +47,7 @@ void renderParticipiants(std::stringstream& ss, const SharedMemory* sharedMemory
 
 		for (int i = 0; i < sharedMemory->mNumParticipants; i++)
 		{
-			renderParticipiant(ss, sharedMemory->mParticipantInfo[i]);
+			renderParticipiant(ss, i, sharedMemory);
 			if (i < (sharedMemory->mNumParticipants - 1)) {
 				ss << ",";
 			}
@@ -46,14 +59,34 @@ void renderParticipiants(std::stringstream& ss, const SharedMemory* sharedMemory
 	ss << "}";
 }
 
+bool contains(std::string value, std::string key)
+{
+	if (value.compare("") > 0)
+	{
+		return ((int)value.find(key) > (int)std::string::npos);
+	}
+	else {
+		return false;
+	}
+}
+
+bool sectionEnabled(std::string queryString, std::string sectioName)
+{
+	std::stringstream ss;
+	ss << sectioName << "=true";
+	return queryString.empty() || contains(queryString, ss.str());
+}
+
 
 std::string JSONRenderer::renderJSON(const SharedMemory* sharedData, std::string query)
 {
 	std::stringstream ss;
 
-	ss << "{";
-	renderInput(ss, sharedData);
-	ss << "}";
+		ss << "{";
+		renderInput(ss, sharedData);
+		ss << ",";
+		renderParticipiants(ss, sharedData);
+		ss << "}";
 
 	return ss.str();
 }
