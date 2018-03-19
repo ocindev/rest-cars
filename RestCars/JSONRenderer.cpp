@@ -31,7 +31,11 @@ void renderParticipiant(std::stringstream& ss,int index, const SharedMemory* sha
 	ss << "\"mRaceState\":" << sharedMemory->mRaceStates[index] << ",";
 	ss << "\"mNationality\":" << sharedMemory->mNationalities[index] << ",";
 	ss << "\"mCarClass\":\"" << sharedMemory->mCarClassNames[index] << "\",";
-	ss << "\"mCarName\":\"" << sharedMemory->mCarNames[index] << "\"}";
+	ss << "\"mCarName\":\"" << sharedMemory->mCarNames[index] << "\",";
+	ss << "\"position\": {";
+	ss << "\"x\":" << pInfo.mWorldPosition[0] << ",";
+	ss << "\"y\":" << pInfo.mWorldPosition[1] << ",";
+	ss << "\"z\":" << pInfo.mWorldPosition[2] << "}}";
 
 }
 

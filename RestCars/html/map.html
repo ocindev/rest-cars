@@ -1,0 +1,52 @@
+<html>
+
+<!-- HTML Canvas Map View made by Nico Weiser (c) -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="UTF-8"/>
+</head>
+
+
+<canvas id="map" width="1000" height="1000" />
+<script language="javascript" type="text/javascript" src="jquery-2.2.0.min.js"></script>
+<script language="javascript" type="text/javascript">
+
+
+    const refreshInterval = 1000;
+
+    function calcPositionOffset(x,y) {
+        var rx,ry;
+        rx = Math.trunc(x) +500;
+        ry = Math.trunc(y) +500;
+
+        return {"x" : rx, "y" : ry};
+    }
+
+    function refreshMap(){
+        $.getJSON('http://localhost:8000/restcars/api', function(data){
+
+            if(!data) return;
+
+            if(data.participiants.mNumParticipiants < 1) return;
+
+            var participiants = data.participiants.mParticipiantInfo;
+            var canvas = document.getElementById('map');
+            
+            var ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.scale(-1,1);
+            ctx.globalAlpha=0.5;
+			ctx.fillStyle = "black";
+
+            for(var i=0; i<participiants.length; i++){
+                var coordinates = calcPositionOffset(0.2 *participiants[i].position.x, 0.2 *participiants[i].position.z);
+                ctx.fillRect(coordinates.x, coordinates.y, 10,10);
+            }          
+        });
+    }
+
+    setInterval(refreshMap, refreshInterval);
+
+</script>
+</html>

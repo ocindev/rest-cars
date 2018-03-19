@@ -14,6 +14,7 @@
         <col width="35%">
         <col width="8%">
         <col width="32%">
+        <col width="5%">
     </colgroup>
 </table>
 <script language="javascript" type="text/javascript" src="jquery-2.2.0.min.js"></script>
@@ -59,8 +60,16 @@
                 row.append($("<td class='cLap' />").append(participiants[i].mCurrentLap));
                 
                 // append best laptime
-                row.append($("<td class='time' />").append(participiants[i].mFastesLapTime                                                                                                                                                                            ));
+                row.append($("<td class='time' />").append(participiants[i].mFastesLapTime));
+                
+                // append coordinates
+                
+                var x = Math.trunc(participiants[i].position.x);
+                var y = Math.trunc(participiants[i].position.y);
+                var z = Math.trunc(participiants[i].position.z);
 
+
+                row.append($("<td class='x' />").append("x:"+ x + "y" + y, "z" +z));
 
             }
 
