@@ -12,6 +12,7 @@
 #define VERSION "V0.1"
 #define HTTP_404 ""
 #define URL "/restcars/api"
+#define URL_WEB "/restcars/overlays"
 #define POLLING_INTERVAL 17
 #define HTTP_404 "{\"status\": \"404 not found, please use the correct URL: " URL "\"}"
 #define READY_TEST "{\"status\": \"200 ok, ready to process data\"}"
@@ -34,13 +35,9 @@ static void handleEvent(struct mg_connection *mc, int ev, void *ev_data)
 		{
 			restfulService.handleHTTPRequest(mc, hm);
 		}
-		else {
-			mg_printf(mc, "HTTP/1.1 404 Not found\r\n"
-				"Content-Type: application/json\r\n"
-				"Cache-Control: no-cache\r\n"
-				"Access-Control-Allow-Origin: *\r\n"
-				"Content-Length: %d\r\n\r\n%s",
-				(int)strlen(HTTP_404), HTTP_404);
+		else
+		{
+			mg_serve_http(mc, (struct http_message *) ev_data, s_http_server_opts);
 		}
 	default:
 		break;
@@ -56,7 +53,8 @@ int main()
 	mg_mgr_init(&mgr, NULL);
 	mc = mg_bind(&mgr, s_http_port, handleEvent);
 	mg_set_protocol_http_websocket(mc);
-	s_http_server_opts.document_root = ".";
+	s_http_server_opts.document_root = "./html/";
+	s_http_server_opts.enable_directory_listing = "yes";
 
 	printf("# RestCars %s\n", VERSION);
 	printf("# (c) Nico Weiser\n\n");
