@@ -8,13 +8,15 @@ The application is mainly written in C++ and uses a embedded web server called m
 
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/i12bokay/rest-cars.svg?columns=all)](https://waffle.io/i12bokay/rest-cars)
 
-# Planned functions
+# Stream overlays
 
-HTML Stream overlays for stream applications such as OBS or XSplit:
+Aside from the REST API i work on a bunch of useful stream overlays for stream applications such as OBS and XSplit: 
 * track map with current participiant positions
 * participiant listing with standings and relative positions
 * clutch and brake overlay
 * steering overlay with exchangable wheel images
+
+They are managed in an seperated repository: [Rest Cars Overlays](https://github.com/i12bokay/rest-cars-overlays)
 
 
 # Build from Source
