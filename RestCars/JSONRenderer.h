@@ -5,5 +5,5 @@
 class JSONRenderer {
 public:
 	JSONRenderer();
-	std::string renderJSON(const SharedMemory* sharedData, std::string query);
+	std::string renderJSON(const SharedMemory* sharedData);
 };

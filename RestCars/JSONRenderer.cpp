@@ -2,14 +2,15 @@
 
 
 
-
-
+/**
+	JSONRenderer for creating a JSON Object containing the shared memory data.
+*/
 
 JSONRenderer::JSONRenderer() {};
 
-
-
-
+/**
+	Adding the user input information.
+*/
 void renderInput(std::stringstream& ss, const SharedMemory* sharedMemory)
 {
 	ss << "\"input\":{";
@@ -19,6 +20,10 @@ void renderInput(std::stringstream& ss, const SharedMemory* sharedMemory)
 	ss << "\"mUnfilteredClutch\":" << sharedMemory->mUnfilteredClutch << "}";
 }
 
+
+/**
+	Adding information about the session participiant.
+*/
 void renderParticipiant(std::stringstream& ss,int index, const SharedMemory* sharedMemory)
 {
 	const ParticipantInfo pInfo = sharedMemory->mParticipantInfo[index];
@@ -39,6 +44,10 @@ void renderParticipiant(std::stringstream& ss,int index, const SharedMemory* sha
 
 }
 
+
+/**
+	Adding the session participiants.
+*/
 void renderParticipiants(std::stringstream& ss, const SharedMemory* sharedMemory)
 {
 	ss << "\"participiants\":{";
@@ -63,26 +72,11 @@ void renderParticipiants(std::stringstream& ss, const SharedMemory* sharedMemory
 	ss << "}";
 }
 
-bool contains(std::string value, std::string key)
-{
-	if (value.compare("") > 0)
-	{
-		return ((int)value.find(key) > (int)std::string::npos);
-	}
-	else {
-		return false;
-	}
-}
 
-bool sectionEnabled(std::string queryString, std::string sectioName)
-{
-	std::stringstream ss;
-	ss << sectioName << "=true";
-	return queryString.empty() || contains(queryString, ss.str());
-}
-
-
-std::string JSONRenderer::renderJSON(const SharedMemory* sharedData, std::string query)
+/**
+	Returns an JSON string containing the shared memory data.
+*/
+std::string JSONRenderer::renderJSON(const SharedMemory* sharedData)
 {
 	std::stringstream ss;
 
