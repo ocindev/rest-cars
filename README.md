@@ -15,6 +15,7 @@ __Thanks for your work !__
 * Make sure that Project Cars 2 is running and SharedMemory (Project Cars2) is enabled
 * Open the rest-cars.exe
 * Open the url http://localhost:8000/restcars/api to access the REST-API
+* [Sample json](https://raw.githubusercontent.com/nweiser94/rest-cars/master/rest-cars_example.json)
 
 # Planned features
 
