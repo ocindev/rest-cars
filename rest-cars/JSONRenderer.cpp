@@ -27,10 +27,10 @@ void renderEvent(std::stringstream& ss, const SharedMemory* sharedMemory)
 {
 	ss << "\"event\":{";
 	ss << "\"mLapsInEvent\":" << sharedMemory->mLapsInEvent << ",";
-	ss << "\"mTrackLocation\":" << sharedMemory->mTrackLocation << ",";
-	ss << "\"mTrackVariation\":" << sharedMemory->mTrackVariation << ",";
-	ss << "\"mTranslatedTrackLocation\":" << sharedMemory->mTranslatedTrackLocation << ",";
-	ss << "\"mTranslatedTrackVariation\":" << sharedMemory->mTranslatedTrackVariation << ",";
+	ss << "\"mTrackLocation\":\"" << sharedMemory->mTrackLocation << "\",";
+	ss << "\"mTrackVariation\":\"" << sharedMemory->mTrackVariation << "\",";
+	ss << "\"mTranslatedTrackLocation\":\"" << sharedMemory->mTranslatedTrackLocation << "\",";
+	ss << "\"mTranslatedTrackVariation\":\"" << sharedMemory->mTranslatedTrackVariation << "\",";
 	ss << "\"mTrackLength\":" << sharedMemory->mTrackLength << "}";
 }
 
@@ -119,8 +119,8 @@ void renderPitInfo(std::stringstream& ss, const SharedMemory* sharedMemory)
 void renderCarState(std::stringstream& ss, const SharedMemory* sharedMemory)
 {
 	ss << "\"carState\":{";
-	ss << "\"mCarName\":" << sharedMemory->mCarName << ",";
-	ss << "\"mCarClassName\":" << sharedMemory->mCarClassName << ",";
+	ss << "\"mCarName\":\"" << sharedMemory->mCarName << "\",";
+	ss << "\"mCarClassName\":\"" << sharedMemory->mCarClassName << "\",";
 	ss << "\"mCarFlags\":" << sharedMemory->mCarFlags << ",";
 	ss << "\"mOilTempCelsius\":" << sharedMemory->mOilTempCelsius << ",";
 	ss << "\"mOilPressurekPa\":" << sharedMemory->mOilPressureKPa << ",";
@@ -152,7 +152,7 @@ void renderCarState(std::stringstream& ss, const SharedMemory* sharedMemory)
 	ss << "\"mEngineSpeed\":" << sharedMemory->mEngineSpeed << ",";
 	ss << "\"mEngineTorque\":" << sharedMemory->mEngineTorque << ",";
 	ss << "\"mWings\":[" << sharedMemory->mWings[1] << "," << sharedMemory->mWings[2] << "],";
-	ss << "\"mHandBrake\": " << sharedMemory->mHandBrake << ",";
+	ss << "\"mHandBrake\": " << sharedMemory->mHandBrake << "}";
 }
 
 void renderWheelsTyres(std::stringstream& ss, const SharedMemory* sharedMemory)
@@ -194,7 +194,7 @@ void renderWheelsTyres(std::stringstream& ss, const SharedMemory* sharedMemory)
 	ss << ",";
 	ss << "\"mAirPressure\":[" << sharedMemory->mAirPressure[TYRE_FRONT_LEFT] << "," << sharedMemory->mAirPressure[TYRE_FRONT_RIGHT] << "," << sharedMemory->mAirPressure[TYRE_REAR_LEFT] << "," << sharedMemory->mAirPressure[TYRE_REAR_RIGHT] << "]";
 	ss << ",";
-	ss << "\"mTyreCompund\":[" << sharedMemory->mTyreCompound[TYRE_FRONT_LEFT] << "," << sharedMemory->mTyreCompound[TYRE_FRONT_RIGHT] << "," << sharedMemory->mTyreCompound[TYRE_REAR_LEFT] << "," << sharedMemory->mTyreCompound[TYRE_REAR_RIGHT] << "]";
+	ss << "\"mTyreCompund\":[\"" << sharedMemory->mTyreCompound[TYRE_FRONT_LEFT] << "\",\"" << sharedMemory->mTyreCompound[TYRE_FRONT_RIGHT] << "\",\"" << sharedMemory->mTyreCompound[TYRE_REAR_LEFT] << "\",\"" << sharedMemory->mTyreCompound[TYRE_REAR_RIGHT] << "\"]";
 	ss << "}";
 
 }
