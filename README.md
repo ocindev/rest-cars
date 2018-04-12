@@ -4,9 +4,23 @@
 # The Project
 The Rest Cars project provides Project Cars 2 Shared Memory Data via JSON over HTTP. The native windows command prompt application will act as a local webserver that provides the data over HTTP. Any HTTP client or web browser is able to access data provided by the API.
 
-The application is mainly written in C++ and uses a embedded web server called mongoose (https://github.com/cesanta/mongoose).
+The application is mainly written in C++ and uses mongoose for networking (https://github.com/cesanta/mongoose).
 
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/i12bokay/rest-cars.svg?columns=all)](https://waffle.io/i12bokay/rest-cars)
+It is heavily inspired and based on the CREST Project made by Lars Rosenquist (https://github.com/NLxAROSA/CREST).
+__Thanks for your work !__
+
+# Usage
+
+* Download the [latest release](https://github.com/nweiser94/rest-cars/releases/latest)
+* Make sure that Project Cars 2 is running
+* Open the rest-cars.exe
+* Open the url http://localhost:8000/restcars/api to access the REST-API
+
+# Planned features
+
+* Easy to use GUI
+
+
 
 # Stream overlays
 
@@ -19,7 +33,3 @@ Aside from the REST API i work on a bunch of useful stream overlays for stream a
 They are managed in an seperated repository: [Rest Cars Overlays](https://github.com/i12bokay/rest-cars-overlays)
 
 
-# Build from Source
-
-
-# Usage
