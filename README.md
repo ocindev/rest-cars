@@ -12,7 +12,7 @@ __Thanks for your work !__
 # Usage
 
 * Download the [latest release](https://github.com/nweiser94/rest-cars/releases/latest)
-* Make sure that Project Cars 2 is running
+* Make sure that Project Cars 2 is running and SharedMemory (Project Cars2) is enabled
 * Open the rest-cars.exe
 * Open the url http://localhost:8000/restcars/api to access the REST-API
 
