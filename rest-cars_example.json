@@ -1,0 +1,243 @@
+{
+    "input": {
+        "mUnfilteredThrottle": 0,
+        "mUnfilteredBrake": 0,
+        "mUnfilteredSteering": 0,
+        "mUnfilteredClutch": 0
+    },
+    "participiants": {
+        "mNumParticipiants": 1,
+        "mParticipiantInfo": [
+            {
+                "mIsActive": true,
+                "mName": "[IRC] m.two",
+                "mRacePosition": 1,
+                "mCurrentLap": 1,
+                "mFastesLapTime": -123,
+                "mPitmode": 5,
+                "mRaceState": 1,
+                "mNationality": 0,
+                "mCarClass": "GT3",
+                "mCarName": "Porsche 911 GT3 R Endurance",
+                "mNationality": 0,
+                "mPitSchedule": 0,
+                "mHighestFlagColours": 0,
+                "mHighestFlagReasons": 0,
+                "position": {
+                    "x": 472.099,
+                    "y": 8.84461,
+                    "z": 179.017
+                }
+            }
+        ]
+    },
+    "weather": {
+        "mAmbientTemperature": 29.8942,
+        "mTrackTemperature": 40.7096,
+        "mRainDensity": 0,
+        "mWindSpeed": 0.865358,
+        "mWindDirectionX": -0.560261,
+        "mWindDirectionY": 0.826722,
+        "mSnowDensity": 0,
+        "mCloudBrightness": 2
+    },
+    "carState": {
+        "mCarName": "Porsche 911 GT3 R Endurance",
+        "mCarClassName": "GT3",
+        "mCarFlags": 10,
+        "mOilTempCelsius": 49.9122,
+        "mOilPressurekPa": 121.998,
+        "mWaterTempCelsius": 48.2156,
+        "mWaterPressurekPa": 67.5172,
+        "mFuelPressurekPa": 58.5,
+        "mFuelLevel": 0.299465,
+        "mFuelCapacity": 120,
+        "mSpeed": 6.49477,
+        "mRPM": 2110.09,
+        "mMaxRPM": 9400,
+        "mBrake": 0,
+        "mThrottle": 0,
+        "mClutch": 0,
+        "mSteering": -4.64916e-06,
+        "mGear": 1,
+        "mNumGears": 6,
+        "mOdometerKM": 1952.56,
+        "mAntiLockActive": 0,
+        "mLastOpponentCollisionIndex": -1,
+        "mLastOpponentCollisionMagnitude": 0,
+        "mBoostActive": 0,
+        "mBoostAmount": 0,
+        "mTurboBoostPressure": 15330.8,
+        "mBrakeBias": 0.49,
+        "mCrashState": 0,
+        "mAeroDamage": 0,
+        "mEngineDamage": 7.82013e-05,
+        "mEngineSpeed": 220.968,
+        "mEngineTorque": 5.29732,
+        "mWings": [
+            0.545455,
+            0
+        ],
+        "mHandBrake": 0
+    },
+    "event": {
+        "mLapsInEvent": 0,
+        "mTrackLocation": "Zolder",
+        "mTrackVariation": "GP",
+        "mTranslatedTrackLocation": "Zolder",
+        "mTranslatedTrackVariation": "Grand Prix",
+        "mTrackLength": 4146.73
+    },
+    "flags": {
+        "mHighestFlagColour": 0,
+        "mHighestFlagReason": 0
+    },
+    "gameStates": {
+        "mGameState": 3,
+        "mSessionState": 1,
+        "mRaceState": 1
+    },
+    "pitInfo": {
+        "mPitMode": 5,
+        "mPitSchedule": 0,
+        "mEnforcedPitStopLap": 0
+    },
+    "timings": {
+        "mNumSectors": 3,
+        "mLapInvalidated": true,
+        "mBestLapTime": -1,
+        "mLastLapTime": -1,
+        "mCurrentTime": -1,
+        "mSplitTimeAhead": -1,
+        "mSplitTimeBehind": -1,
+        "mSplitTime": 0,
+        "mEventTimeRemaining": -1,
+        "mPersonalFastestLapTime": -1,
+        "mWorldFastestLapTime": -1,
+        "mCurrentSector1Time": -1,
+        "mCurrentSector2Time": -1,
+        "mCurrentSector3Time": -1,
+        "mPersonalFastestSector1Time": -1,
+        "mPersonalFastestSector2Time": -1,
+        "mPersonalFastestSector3Time": -1,
+        "mWorldsFastestSector1Time": -1,
+        "mWorldsFastestSector2Time": -1,
+        "mWorldsFastestSector3Time": -1
+    },
+    "mWheelsTyres": {
+        "mTyreFlags": [
+            7,
+            7,
+            7,
+            7
+        ],
+        "mTyreTerrain": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "mTyreTemp": [
+            31.4893,
+            30.9159,
+            34.7273,
+            34.0274
+        ],
+        "mTyreRPS": [
+            -19.9976,
+            -19.9974,
+            -18.4867,
+            -18.4867
+        ],
+        "mTyreHeightAboveGround": [
+            -0.0140989,
+            -0.0140955,
+            -0.0229362,
+            -0.0229356
+        ],
+        "mTyreWear": [
+            9.0003e-05,
+            7.92742e-06,
+            0.00115097,
+            0.000774205
+        ],
+        "mBrakeDamage": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "mSuspensionDamage": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "mBrakeTempCelsius": [
+            30.2066,
+            30.2024,
+            30.1657,
+            30.1633
+        ],
+        "mTyreTreadTemp": [
+            304.721,
+            304.084,
+            308.047,
+            307.305
+        ],
+        "mTyreLayerTemp": [
+            308.47,
+            307.362,
+            316.371,
+            314.309
+        ],
+        "mTyreCarcassTemp": [
+            304.156,
+            303.792,
+            304.949,
+            304.449
+        ],
+        "mTyreRimTemp": [
+            298.625,
+            298.611,
+            298.619,
+            298.614
+        ],
+        "mTyreInternalAirTemp": [
+            300.287,
+            300.168,
+            300.351,
+            300.214
+        ],
+        "mWheelLocalPositionY": [
+            -0.0441876,
+            -0.0441888,
+            -0.0331071,
+            -0.0331021
+        ],
+        "mSuspensionTravel": [
+            0.0645549,
+            0.0645576,
+            0.0749477,
+            0.074943
+        ],
+        "mSuspensionVelocity": [
+            -0.0001305,
+            -0.000117466,
+            9.29647e-05,
+            8.49894e-05
+        ],
+        "mAirPressure": [
+            140.999,
+            140.943,
+            138.006,
+            137.943
+        ],
+        "mTyreCompund": [
+            "Weicher Slick",
+            "Weicher Slick",
+            "Weicher Slick",
+            "Weicher Slick"
+        ]
+    }
+}
