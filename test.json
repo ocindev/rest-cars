@@ -1,0 +1,98 @@
+{
+    "data" : {
+
+        "gameStates" : {
+            "mGameState" : 3,
+            "mSessionState" : 5,
+            "mRaceState" : 1
+        },
+
+        "participants" : {
+
+            "mNumParticipants" : 4,
+            "mParticipantInfo" : [
+                {
+                    "mIsActive": true,
+                    "mName": "[IRC] m.two",
+                    "mRacePosition": 1,
+                    "mCurrentLap": 2,
+                    "mFastestLapTime": -123,
+                    "mLastLapTime": -123,
+                    "mPitmode": 1,
+                    "mRaceState": 2,
+                    "mNationality": 0,
+                    "mPitSchedule" : 1,
+                    "mHighestFlagColours": 0,
+                    "mHighestFlagReasons": 0,
+                    "position": {
+                        "x": 472.099,
+                        "y": 8.84461,
+                        "z": 179.017
+                    }
+
+                },
+                {
+                    "mIsActive": true,
+                    "mName": "[IRC] m.two2",
+                    "mRacePosition": 2,
+                    "mCurrentLap": 2,
+                    "mFastestLapTime": -123,
+                    "mPitmode": 0,
+                    "mRaceState": 3,
+                    "mLastLapTime": 60,
+                    "mNationality": 0,
+                    "mPitSchedule" : 0,
+                    "mHighestFlagColours": 0,
+                    "mHighestFlagReasons": 0,
+                    "position": {
+                        "x": 472.099,
+                        "y": 8.84461,
+                        "z": 179.017
+                    }
+
+                },
+                {
+                    "mIsActive": true,
+                    "mName": "[IRC] m.two3",
+                    "mRacePosition": 3,
+                    "mCurrentLap": 2,
+                    "mFastestLapTime": -123,
+                    "mPitmode": 0,
+                    "mRaceState": 4,
+                    "mNationality": 0,
+                    "mLastLapTime": 34,
+                    "mPitSchedule" : 0,
+                    "mHighestFlagColours": 0,
+                    "mHighestFlagReasons": 0,
+                    "position": {
+                        "x": 472.099,
+                        "y": 8.84461,
+                        "z": 179.017
+                    }
+
+                },
+                {
+                    "mIsActive": true,
+                    "mName": "[IRC] m.two4",
+                    "mRacePosition": 4,
+                    "mCurrentLap": 2,
+                    "mFastestLapTime": -123,
+                    "mPitmode": 1,
+                    "mRaceState": 2,
+                    "mLastLapTime": 34.755,
+                    "mNationality": 0,
+                    "mPitSchedule" : 5,
+                    "mHighestFlagColours": 0,
+                    "mHighestFlagReasons": 0,
+                    "position": {
+                        "x": 472.099,
+                        "y": 8.84461,
+                        "z": 179.017
+                    }
+
+                }
+            ]
+            
+        }
+    }   
+}

@@ -210,16 +210,24 @@ void renderParticipiant(std::stringstream& ss,int index, const SharedMemory* sha
 	ss << "\"mName\":\"" << pInfo.mName << "\",";
 	ss << "\"mRacePosition\":" << pInfo.mRacePosition << ",";
 	ss << "\"mCurrentLap\":" << pInfo.mCurrentLap << ",";
-	ss << "\"mFastesLapTime\":" << sharedMemory->mFastestLapTimes[index] << ",";
+	ss << "\"mLapsCompleted\":" << pInfo.mLapsCompleted << ",";
+	ss << "\"mFastestLapTime\":" << sharedMemory->mFastestLapTimes[index] << ",";
 	ss << "\"mPitmode\":" << sharedMemory->mPitModes[index] << ",";
 	ss << "\"mRaceState\":" << sharedMemory->mRaceStates[index] << ",";
 	ss << "\"mNationality\":" << sharedMemory->mNationalities[index] << ",";
 	ss << "\"mCarClass\":\"" << sharedMemory->mCarClassNames[index] << "\",";
 	ss << "\"mCarName\":\"" << sharedMemory->mCarNames[index] << "\",";
-	ss << "\"mNationality\":" << sharedMemory->mNationalities[index] << ",";
 	ss << "\"mPitSchedule\":" << sharedMemory->mPitSchedules[index] << ",";
+	ss << "\"mLastLapTime\":" << sharedMemory->mLastLapTimes[index] << ",";
 	ss << "\"mHighestFlagColours\":" << sharedMemory->mHighestFlagColours[index] << ",";
 	ss << "\"mHighestFlagReasons\":" << sharedMemory->mHighestFlagReasons[index] << ",";
+	ss << "\"mCurrentSector1Time\":" << sharedMemory->mCurrentSector1Times[index] << ",";
+	ss << "\"mCurrentSector2Time\":" << sharedMemory->mCurrentSector2Times[index] << ",";
+	ss << "\"mCurrentSector3Time\":" << sharedMemory->mCurrentSector3Times[index] << ",";
+	ss << "\"mFastestSector1Time\":" << sharedMemory->mFastestSector1Times[index] << ",";
+	ss << "\"mFastestSector2Time\":" << sharedMemory->mFastestSector2Times[index] << ",";
+	ss << "\"mFastestSector3Time\":" << sharedMemory->mFastestSector3Times[index] << ",";
+	ss << "\"mCurrentLapDistance\":" << pInfo.mCurrentLapDistance << ",";
 	ss << "\"position\": {";
 	ss << "\"x\":" << pInfo.mWorldPosition[0] << ",";
 	ss << "\"y\":" << pInfo.mWorldPosition[1] << ",";
@@ -233,13 +241,13 @@ void renderParticipiant(std::stringstream& ss,int index, const SharedMemory* sha
 */
 void renderParticipiants(std::stringstream& ss, const SharedMemory* sharedMemory)
 {
-	ss << "\"participiants\":{";
-	ss << "\"mNumParticipiants\":" << sharedMemory->mNumParticipants;
+	ss << "\"participants\":{";
+	ss << "\"mNumParticipants\":" << sharedMemory->mNumParticipants;
 
 	if (sharedMemory->mNumParticipants > -1)
 	{
 		ss << ",";
-		ss << "\"mParticipiantInfo\":[";
+		ss << "\"mParticipantInfo\":[";
 
 		for (int i = 0; i < sharedMemory->mNumParticipants; i++)
 		{

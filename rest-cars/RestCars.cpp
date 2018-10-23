@@ -9,7 +9,7 @@
 // Restful API for Project Cars 2 using mongoose embedded webserver library.
 // Providing shared memory data via portable and accecssible HTTP interface.
 // Written as a native windows command prompt application.
-// Repository: http://www.github.com/i12bokay/rest-cars
+// Repository: http://www.github.com/nweiser94/rest-cars
 //
 
 
